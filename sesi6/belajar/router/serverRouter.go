@@ -19,5 +19,15 @@ func StartServer() *gin.Engine {
 
 	router.DELETE("/cars/:carID", controllers.DeleteCar)
 
+	router.GET("/dealers", controllers.GetDealerships)
+
+	router.POST("/dealers", controllers.CreateDealership)
+
+	router.PUT("/dealers/:dealershipID", controllers.UpdateDealership)
+
+	router.GET("/dealers/:dealershipID", controllers.GetDealershipByID)
+
+	router.DELETE("/dealers/:dealershipID", controllers.DeleteDealership)
+
 	return router
 }
