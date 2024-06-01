@@ -84,3 +84,16 @@ func DeleteDealership(dealerId string) error {
 
 	return nil
 }
+
+func GetDealershipByCode(d_code string) (models.Dealership, error) {
+	db := database.GetDB()
+
+	var dealership models.Dealership
+	err := db.Where("code = ?", d_code).First(&dealership).Error
+	if err != nil {
+		fmt.Println("Error getting dealership by code: ", err)
+		return models.Dealership{}, err
+	}
+
+	return dealership, nil
+}
