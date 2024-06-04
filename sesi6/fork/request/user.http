@@ -1,0 +1,11 @@
+GET http://localhost:5004/users
+Content-Type: "application/json"
+
+###
+POST http://localhost:5004/users
+Content-Type: "application/json"
+
+{
+  "username": "test2",
+  "email": "test@mail.com"
+}

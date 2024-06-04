@@ -7,8 +7,8 @@ type Car struct {
 	Brand      string     `json:"brand" gorm:"not null;type:varchar(100)"`
 	Model      string     `json:"model" gorm:"not null;type:varchar(100)"`
 	Price      int        `json:"price" gorm:"not null"`
-	DealerCode string     `json:"d_code"`
-	Dealer     Dealership `json:"dealership" gorm:"foreignKey:DealerCode;references:DCode"`
 	CreatedAt  time.Time  `gorm:"autoCreateTime"`
 	UpdatedAt  time.Time  `gorm:"autoUpdateTime"`
+	DealerCode string     `json:"d_code"`
+	Dealer     Dealership `json:"dealership" gorm:"foreignKey:DealerCode;references:DCode"`
 }
